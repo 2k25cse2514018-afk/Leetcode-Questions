@@ -1,0 +1,36 @@
+class Solution {
+public:
+    int singleNumber(vector<int>& nums) {
+        map<int,int> mpp;
+        int find=0;
+        int n = nums.size();
+
+        for(int i=0;i<n;i++){
+            mpp[nums[i]]++;
+        }
+
+        for(auto i: mpp){
+            if(i.second==1){
+                find=i.first;
+            }
+        }
+        return find;
+        
+    }
+};
+
+
+Best way to solve this Question
+
+class Solution {
+public:
+    int singleNumber(vector<int>& nums) {
+        int ans=0;
+
+        for(int i=0;i<nums.size();i++){
+            int x=nums[i];
+            ans=ans^x;
+        }
+        return ans;
+    }
+};
