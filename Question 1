@@ -1,0 +1,19 @@
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+        map<int ,int> hash;
+        int n=nums.size();
+
+        for(int i=0;i<n;i++){
+            int sum=nums[i];
+            int needed=target-sum;
+            if(hash.find(needed) != hash.end()){
+                return {hash[needed],i};
+            }
+            hash[nums[i]]=i;
+        }
+        return {-1,-1};
+        
+    }
+  
+};
