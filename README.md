@@ -44,7 +44,19 @@ Each LeetCode problem has its own file/folder.
 ```text
 Leetcode-Questions/
 │
+├── Question 1/
+├── Question 7/
+├── Question 26/
+├── Question 27/
+├── Question 88/
+├── Question 128/
+├── Question 1299/
+├── Question 136/
 ├── Question 189/
+├── Question 2149/
+├── Question 217/
 ├── Question 268/
 ├── Question 485/
+├── Question 2951/
+├── Question 3870/
 └── README.md
