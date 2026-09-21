@@ -1,0 +1,44 @@
+class Solution {
+  public:
+    int minTime(vector<int>& arr, int k) {
+        // code here
+        int n= arr.size();
+        
+        if(n<k){
+            return -1;
+        }
+        
+        int low=0;
+        int high=0;
+        
+        for(int i=0;i<n;i++){
+            low=max(low,arr[i]);
+            high+=arr[i];
+        }
+        
+        while(low<=high){
+            int mid=low+(high-low)/2;
+            
+            int painter=1;
+            int walls=0;
+            
+            for(int i=0;i<n;i++){
+                if(walls+arr[i]<=mid){
+                    walls=arr[i]+walls;
+                }
+                else{
+                    painter++;
+                    walls=arr[i];
+                }
+            }
+            
+            if(k<painter){
+                low=mid+1;
+            }
+            else{
+                high=mid-1;
+            }
+        }
+        return low;
+    }
+};
