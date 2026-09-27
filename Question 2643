@@ -1,0 +1,22 @@
+class Solution {
+public:
+    vector<int> rowAndMaximumOnes(vector<vector<int>>& mat) {
+        vector<int>ans;
+        int max_one=-1;
+        int index=0;
+
+        for(int i=0;i<mat.size();i++){
+            sort(mat[i].begin(),mat[i].end());
+            int lb=lower_bound(mat[i].begin(),mat[i].end(),1)-mat[i].begin();
+            int one=mat[i].size()-lb;
+
+            if(max_one<one){
+                max_one=one;
+                index=i;
+            }
+        }
+        ans.push_back(index);
+        ans.push_back(max_one);
+        return ans;
+    }
+};
