@@ -1,0 +1,28 @@
+class Solution {
+public:
+    int totalFruit(vector<int>& fruits) {
+        int n=fruits.size();
+        int start=0;
+        int end=0;
+        int result=0;
+        map<int,int>mpp;
+
+        while(n>end){
+            mpp[fruits[end]]++;
+
+            while(mpp.size()>2){
+                mpp[fruits[start]]--;
+
+                if(mpp[fruits[start]]==0){
+                    mpp.erase(fruits[start]);
+                }
+                start++;
+                
+            }
+            result=max(result,end-start+1);
+                end++;
+            
+        }
+        return result;
+    }
+};
