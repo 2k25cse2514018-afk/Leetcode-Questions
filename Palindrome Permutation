@@ -1,0 +1,51 @@
+Using Map=>
+
+#include <bits/stdc++.h> 
+bool palindromeString(string s) {
+    unordered_map<char,int> mpp;
+    for(char ch: s){
+        mpp[ch]++;
+    }
+    int odd_count=0;
+    for(auto i:mpp){
+        odd_count+=i.second%2;
+    }
+    if(odd_count>1){
+        return false;
+    }
+    return true;
+}
+
+
+Using Hashing=> 
+
+#include <bits/stdc++.h> 
+bool palindromeString(string s) {
+    int arr[128]={0};
+    for(char ch:s){
+        arr[ch]++;
+    }
+    int odd_count=0;
+    for(int i=0;i<128;i++){
+        odd_count+=arr[i]%2;
+    }
+    if(odd_count>1){
+        return false;
+    }
+    return true;
+}
+
+
+Using Set=>
+
+bool canpermuatePalindrome(string s){
+	
+	unordered_set<char> char_set:
+	for(char ch:s){
+	  if(char_set.count(c))
+	     char_set.erase(c);
+	  else
+  	      char_set.insert(c);
+	}
+	  return char_set.size()<=1;
+	}
