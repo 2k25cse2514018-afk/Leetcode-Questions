@@ -1,0 +1,23 @@
+class Solution {
+public:
+    vector<int> intersection(vector<int>& nums1, vector<int>& nums2) {
+        unordered_map<int,int> mpp;
+        for(int i:nums1){
+            mpp[i]=1;
+        }
+        for(int i:nums2){
+            if(mpp[i]==1){
+                mpp[i]++;
+            }
+        }
+        vector<int> ans;
+        for(auto i:mpp){
+            if(i.second>1){
+                ans.push_back(i.first);
+            }
+            
+        }
+        return ans;
+
+    }
+};
