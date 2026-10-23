@@ -64,6 +64,7 @@ Leetcode-Questions/
 ├── Question 268/
 ├── Question 485/
 ├── Question 711/
+├── Question 2487/
 ├── Question 2951/
 ├── Question 3870/
 └── README.md
