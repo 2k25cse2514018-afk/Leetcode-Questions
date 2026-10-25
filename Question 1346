@@ -1,0 +1,24 @@
+class Solution {
+public:
+bool checkIfExist(vector<int>& arr) {
+unordered_map<int,int> mpp;
+
+
+    for(int i = 0; i < arr.size(); i++) {
+        mpp[arr[i]]++;
+    }
+
+    for(auto i : mpp) {
+        int x = i.first;
+
+        if(mpp.find(2 * x) != mpp.end()) {
+            if(x != 0 || mpp[x] > 1) {
+                return true;
+            }
+        }
+    }
+
+    return false;
+}
+
+};
