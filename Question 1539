@@ -1,0 +1,24 @@
+class Solution {
+public:
+    int findKthPositive(vector<int>& arr, int k) {
+        
+        int count=0;
+        int curr=0;
+        int ans=0;
+        sort(arr.begin(),arr.end());
+        int maxi=arr[arr.size()-1];
+        for(int i=1;i<=k+maxi;i++){
+            if (curr<arr.size()&&i==arr[curr]){ 
+                curr++;
+                 }
+            else{
+                count++;
+                if(count==k){
+                    ans=i;
+                    break;
+                }
+            }
+        }
+        return ans;
+    }
+};
