@@ -60,6 +60,7 @@ Leetcode-Questions/
 ├── Question 136/
 ├── Question 189/
 ├── Question 2149/
+├── Question 206/
 ├── Question 217/
 ├── Question 268/
 ├── Question 424/
