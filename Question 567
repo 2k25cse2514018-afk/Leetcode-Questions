@@ -1,0 +1,31 @@
+class Solution {
+public:
+    bool checkInclusion(string s1, string s2) {
+        unordered_map<char,int> frequency_map;
+        for(int i=0;i<s1.size();i++){
+            frequency_map[s1[i]]++;
+        }
+
+        int start=0;
+        int count=s1.size();
+
+        for(int end=0;end<s2.size();end++){
+            if(frequency_map.find(s2[end])!=frequency_map.end() && frequency_map[s2[end]]>0){
+                count--;
+            }
+            frequency_map[s2[end]]--;
+
+            if(end-start+1>s1.size()){
+                if(frequency_map.find(s2[start])!=frequency_map.end() && frequency_map[s2[start]]>=0){
+                    count++;
+                }
+                frequency_map[s2[start]]++;
+                start++;
+            }
+            if(count==0){
+                return true;
+            }
+        }
+        return false;
+    }
+};
