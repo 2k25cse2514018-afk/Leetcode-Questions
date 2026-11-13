@@ -1,0 +1,36 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+int maximumRequests(int window, vector<int>& timestamps) {
+    int start=0;
+    int end=0;
+    int count=0;
+
+    for (int timestamp : timestamps) {
+        int min=timestamp;
+        int max=timestamp+window-1;
+
+        while (end<timestamps.size() && timestamps[end]<=max) {
+            end++;
+        }
+
+        while (timestamps[start]<min) {
+            start++;
+        }
+
+        count = max(count,end-start);
+    }
+
+    return count;
+}
+
+int main() {
+    vector<int> timestamps = {1,2,3,4,5};
+    int window=3;
+
+    cout<<maximumRequests(window,timestamps);
+
+    return 0;
+}
