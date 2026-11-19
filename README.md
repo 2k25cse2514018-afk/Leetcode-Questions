@@ -44,6 +44,7 @@ Each LeetCode problem has its own file/folder.
 ```text
 Leetcode-Questions/
 │
+├── Truck Tour/
 ├── Question 1/
 ├── Question 7/
 ├── Question 26/
