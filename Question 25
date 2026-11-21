@@ -22,3 +22,30 @@ public:
         return head;
     }
 };
+
+Another way
+
+ ListNode*temp=head;
+        int cnt=0;
+
+        while(temp){
+            temp=temp->next;
+            cnt++;
+        }
+        if(cnt<k){
+            return head;
+        }
+        ListNode*prev=NULL;
+        ListNode*curr=head;
+        ListNode*next=NULL;
+
+        for(int i=0;i<k;i++){
+            next=curr->next;
+            curr->next=prev;
+            prev=curr;
+            curr=next;
+        }
+
+        head->next=reverseKGroup(curr, k);
+
+        return prev;
