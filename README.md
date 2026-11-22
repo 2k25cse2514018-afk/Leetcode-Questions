@@ -47,6 +47,7 @@ Leetcode-Questions/
 ├── Truck Tour/
 ├── Question 1/
 ├── Question 7/
+├── Question 20/
 ├── Question 26/
 ├── Question 27/
 ├── Question 34/
