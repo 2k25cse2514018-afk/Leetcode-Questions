@@ -1,0 +1,21 @@
+class Solution {
+public:
+    vector<int> partitionLabels(string s) {
+        int start=0;
+        int end=0;
+        vector<int>ans;
+        unordered_map<char,int> last_occurance;
+         for(int i=0;i<s.size();i++){
+            last_occurance[s[i]]=i;
+         }
+         for(int i=0;i<s.size();i++){
+            int last_index=last_occurance[s[i]];
+            end=max(end,last_index);
+            if(i==end){
+                ans.push_back(end-start+1);
+                start=i+1;
+            }
+         }
+         return ans;
+    }
+};
